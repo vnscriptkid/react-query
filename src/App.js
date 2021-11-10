@@ -18,9 +18,9 @@ function App() {
     }
   );
 
-  return queryInfo.status === "loading" ? (
+  return queryInfo.isLoading ? (
     <div>loading...</div>
-  ) : queryInfo.status === "error" ? (
+  ) : queryInfo.isError ? (
     <div>Ooops! {queryInfo.error.message}</div>
   ) : (
     <div>
@@ -30,6 +30,8 @@ function App() {
           <li key={poke.name}>{poke.name}</li>
         ))}
       </ul>
+      <br />
+      {queryInfo.isFetching && <div>updating...</div>}
     </div>
   );
 }
