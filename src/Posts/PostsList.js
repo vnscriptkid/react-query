@@ -24,6 +24,8 @@ const PostsList = ({ setPostId }) => {
           queryCache.setQueryData(["post", todo.id], todo);
         });
       },
+      refetchInterval: 5000,
+      refetchIntervalInBackground: true,
     }
   );
 

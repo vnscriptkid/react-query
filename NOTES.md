@@ -24,7 +24,9 @@
   - can share data between queries: `queryCache.getQueryData("posts")`
   - helps with scroll restoration (as we have caching)
     - react-router supports scroll restoration out-of-the-box
-
+  - refetch periodically with `refetchInterval`
+    - use case: chat-app (polling approach >< websocket)
+    - `refetchIntervalInBackground`: even when tab is not active
 ## errors
 - retries:
   - default: exponential backoff, retry 3 times, before mark it as error
