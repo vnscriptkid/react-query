@@ -16,6 +16,8 @@ const useSearch = (pokemon) =>
     {
       cacheTime: Infinity,
       enabled: !!pokemon,
+      retry: 1,
+      retryDelay: 1000,
     }
   );
 

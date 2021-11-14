@@ -16,3 +16,8 @@
   - can cache search result
   - can set condition when to start a query by `enabled`
   - can config descriptive query name using array
+
+## errors
+- retries:
+  - default: exponential backoff, retry 3 times, before mark it as error
+  - configurable
