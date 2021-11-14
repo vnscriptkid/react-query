@@ -54,5 +54,11 @@ invalidateQueries(['post', 'B'])
 ## prefetch
 - imperatively `prefetch` at root component: `queryCache.prefetchQuery('posts', fetchPosts)` in `useEffect`
 - `prefetch` when hover on link with `onMouseEnter`, use `staleTime` not to annoy server before certain duration
+- use `force` option to run query whether it's stale or not
+
+## mutations
+- def:
+  - query: Read
+  - mutation: Create, Update, Delete
 
 ## Redux vs react-query
