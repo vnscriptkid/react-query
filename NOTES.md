@@ -21,6 +21,7 @@
     - use case: `index` page to `details` page
     - first set initialData of `details` page from `index` page
     - as `initialState` is true, it starts a query to get all the latest data of details
+  - can share data between queries: `queryCache.getQueryData("posts")`
 
 ## errors
 - retries:

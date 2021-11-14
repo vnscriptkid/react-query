@@ -1,9 +1,10 @@
-import { useQuery } from "react-query";
+import { useQuery, queryCache } from "react-query";
 import axios from "axios";
 import { useReducer } from "react";
 
 import "./App.css";
 import PokemonSearch from "./Search/PokemonSearch";
+import Posts from "./Posts/Posts";
 
 const usePokemon = () =>
   useQuery(
@@ -97,6 +98,7 @@ const App = () => {
     <div>
       {show ? (
         <div>
+          <Posts />
           <button onClick={toggle}>Hide</button>
           <PokemonSearch />
           <CountPokemons />
