@@ -15,3 +15,4 @@
   - queries run parallel
   - can cache search result
   - can set condition when to start a query by `enabled`
+  - can config descriptive query name using array

@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 
 const useSearch = (pokemon) =>
   useQuery(
-    pokemon,
+    ["pokemon", pokemon],
     async () => {
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
