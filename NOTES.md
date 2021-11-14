@@ -30,3 +30,7 @@
 - cancel outdated queries (autocomplete for exp):
   - normal: `debounce`
   - react-query way: expose `axios` req to `react-query`
+
+## pull and push styles with `queryCache`
+- pull: proactively ask for data from another query
+- push: proactively set data for another query

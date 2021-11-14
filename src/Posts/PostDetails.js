@@ -14,8 +14,6 @@ const PostDetails = ({ setPostId, postId }) => {
       return res.data;
     },
     {
-      initialData: () =>
-        queryCache.getQueryData("posts")?.find((p) => p.id === postId),
       initialStale: true,
     }
   );

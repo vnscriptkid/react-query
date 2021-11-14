@@ -1,13 +1,19 @@
 import axios from "axios";
-import { useQuery } from "react-query";
+import { useQuery, queryCache } from "react-query";
 
 const PostsList = ({ setPostId }) => {
   const queryInfo = useQuery("posts", async () => {
     const res = await axios.get("https://jsonplaceholder.typicode.com/todos");
 
+    const todos = res.data;
+
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    return res.data;
+    todos.forEach((todo) => {
+      queryCache.setQueryData(["post", todo.id], todo);
+    });
+
+    return todos;
   });
 
   if (queryInfo.isLoading) return <div>loading...</div>;
