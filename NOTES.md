@@ -13,3 +13,4 @@
   - same queryKeys produce only 1 network req
   - can abtract query into custom hook, to reuse between components
   - queries run parallel
+  - can cache search result
