@@ -50,3 +50,8 @@ invalidateQueries(['post'])
 invalidateQueries(['post', 'A'])
 invalidateQueries(['post', 'B'])
 ```
+
+## prefetch
+- imperatively `prefetch` at root component: `queryCache.prefetchQuery('posts', fetchPosts)`
+
+## Redux vs react-query
