@@ -64,5 +64,8 @@ invalidateQueries(['post', 'B'])
 ![image](https://user-images.githubusercontent.com/28957748/141688846-17c314d0-a876-422c-9d38-c02dcc154d76.png)
 
 - flow: createPost -> successful -> invalidate `posts` query -> refetch `posts` query
+- same as `query`, `mutation` does have `side-effects`: `onSuccess`, `onError`, `onSettled`
+- `onError` receives `error` object from axios in case status is in error range
+- for exp: `error.response.data.message`
 
 ## Redux vs react-query
