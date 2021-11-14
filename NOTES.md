@@ -34,3 +34,6 @@
 ## pull and push styles with `queryCache`
 - pull: proactively ask for data from another query
 - push: proactively set data for another query
+
+## side-effects: tap into query's life-cycle
+- 3 side-effects: `onSuccess`, `onError`, `onSettled`

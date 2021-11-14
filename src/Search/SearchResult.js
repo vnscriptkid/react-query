@@ -28,8 +28,15 @@ const useSearch = (pokemon) =>
     },
     {
       enabled: !!pokemon,
-      retry: 1,
+      retry: 2,
       retryDelay: 1000,
+      onError: (err) => {
+        console.log("oops, ", { err });
+      },
+      onSettled: (data, err) => {
+        const dataOrError = err || data;
+        console.log("it is either success or error", dataOrError);
+      },
     }
   );
 
@@ -42,7 +49,7 @@ const SearchResult = ({ pokemon }) => {
 
   return (
     <div>
-      {queryInfo?.data?.sprites?.front_default ? (
+      {queryInfo?.data?.data?.sprites?.front_default ? (
         <img
           src={queryInfo?.data?.sprites?.front_default}
           width="200px"
