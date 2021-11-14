@@ -68,4 +68,8 @@ invalidateQueries(['post', 'B'])
 - `onError` receives `error` object from axios in case status is in error range
 - for exp: `error.response.data.message`
 
+![image](https://user-images.githubusercontent.com/28957748/141689962-227e9957-165b-4c31-89c9-061fcebbc6d0.png)
+
+- optimistic update: save todo -> getting updated data -> set data to query
+
 ## Redux vs react-query
