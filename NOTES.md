@@ -41,3 +41,6 @@
 
 ## side-effects: tap into query's life-cycle
 - 3 side-effects: `onSuccess`, `onError`, `onSettled`
+
+## invalidation
+- invalide a queryKey => refetch that queryKey

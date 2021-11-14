@@ -28,6 +28,9 @@ const PostDetails = ({ setPostId, postId }) => {
         {queryInfo.isFetching && <span>updating...</span>}
       </h3>
       <p>Completed: {String(queryInfo.data.completed)}</p>
+      <button onClick={() => queryCache.invalidateQueries(["post", postId])}>
+        invalidate post details
+      </button>
       <br />
     </div>
   );
