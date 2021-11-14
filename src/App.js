@@ -19,6 +19,21 @@ const usePokemon = () =>
     }
   );
 
+const useBerries = () =>
+  useQuery(
+    "berries",
+    async () => {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      const res = await axios.get("https://pokeapi.co/api/v2/berry");
+
+      return res.data.results;
+    },
+    {
+      cacheTime: Infinity,
+    }
+  );
+
 function CountPokemons() {
   const queryInfo = usePokemon();
 
@@ -46,6 +61,27 @@ function Pokemon() {
   );
 }
 
+function Berries() {
+  const queryInfo = useBerries();
+
+  return queryInfo.isLoading ? (
+    <div>loading...</div>
+  ) : queryInfo.isError ? (
+    <div>Ooops! {queryInfo.error.message}</div>
+  ) : (
+    <div>
+      <h2>list of berries</h2>
+      <ul>
+        {queryInfo.data.map((b) => (
+          <li key={b.name}>{b.name}</li>
+        ))}
+      </ul>
+      <br />
+      {queryInfo.isFetching && <div>updating...</div>}
+    </div>
+  );
+}
+
 const App = () => {
   const [show, toggle] = useReducer((s) => !s, true);
 
@@ -55,6 +91,7 @@ const App = () => {
         <div>
           <button onClick={toggle}>Hide</button>
           <CountPokemons />
+          <Berries />
           <Pokemon />
         </div>
       ) : (
