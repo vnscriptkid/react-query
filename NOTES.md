@@ -61,4 +61,8 @@ invalidateQueries(['post', 'B'])
   - query: Read
   - mutation: Create, Update, Delete
 
+![image](https://user-images.githubusercontent.com/28957748/141688846-17c314d0-a876-422c-9d38-c02dcc154d76.png)
+
+- flow: createPost -> successful -> invalidate `posts` query -> refetch `posts` query
+
 ## Redux vs react-query
