@@ -1,10 +1,11 @@
 import { useQuery } from "react-query";
 import axios from "axios";
+import { useReducer } from "react";
 
 import "./App.css";
 
-function App() {
-  const queryInfo = useQuery(
+const usePokemon = () =>
+  useQuery(
     "pokemon",
     async () => {
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -14,9 +15,18 @@ function App() {
       return res.data.results;
     },
     {
-      refetchOnWindowFocus: false,
+      cacheTime: Infinity,
     }
   );
+
+function CountPokemons() {
+  const queryInfo = usePokemon();
+
+  return <h3>there are {queryInfo.data?.length} pokemons loaded</h3>;
+}
+
+function Pokemon() {
+  const queryInfo = usePokemon();
 
   return queryInfo.isLoading ? (
     <div>loading...</div>
@@ -35,5 +45,23 @@ function App() {
     </div>
   );
 }
+
+const App = () => {
+  const [show, toggle] = useReducer((s) => !s, true);
+
+  return (
+    <div>
+      {show ? (
+        <div>
+          <button onClick={toggle}>Hide</button>
+          <CountPokemons />
+          <Pokemon />
+        </div>
+      ) : (
+        <button onClick={toggle}>Show</button>
+      )}
+    </div>
+  );
+};
 
 export default App;

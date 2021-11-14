@@ -5,3 +5,10 @@
   - do retries in case of failure
   - decide when to refetch a query
     - `refetchOnWindowFocus`
+    - `staleTime`
+      - out-of-the-box: done `fetching` -> `stale`
+      - `staleTime` is how long a query remains `fresh` after done fetching
+    - `cacheTime`: component get unmounted, how long query stay `inactive` (in cache) ?
+  - can parameterize component by `queryKey` used inside
+  - same queryKeys produce only 1 network req
+  - can abtract query into custom hook, to reuse between components
