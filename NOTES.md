@@ -7,7 +7,7 @@
     - `refetchOnWindowFocus`
     - `staleTime`
       - out-of-the-box: done `fetching` -> `stale`
-      - `staleTime` is how long a query remains `fresh` after done fetching
+      - `staleTime` is how long a query remains `fresh` after done fetching (by default it becomes `stale` right away)
     - `cacheTime`: component get unmounted, how long query stay `inactive` (in cache) ?
   - can parameterize component by `queryKey` used inside
   - same queryKeys produce only 1 network req
@@ -52,6 +52,7 @@ invalidateQueries(['post', 'B'])
 ```
 
 ## prefetch
-- imperatively `prefetch` at root component: `queryCache.prefetchQuery('posts', fetchPosts)`
+- imperatively `prefetch` at root component: `queryCache.prefetchQuery('posts', fetchPosts)` in `useEffect`
+- `prefetch` when hover on link with `onMouseEnter`, use `staleTime` not to annoy server before certain duration
 
 ## Redux vs react-query
