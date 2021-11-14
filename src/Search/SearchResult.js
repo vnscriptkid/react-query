@@ -4,17 +4,29 @@ import { useQuery } from "react-query";
 const useSearch = (pokemon) =>
   useQuery(
     ["pokemon", pokemon],
-    async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+    () => {
+      const source = axios.CancelToken.source();
 
-      const res = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+      const promise = new Promise((resolve) => setTimeout(resolve, 2000)).then(
+        () => {
+          return axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`, {
+            cancelToken: source.token,
+          });
+        }
       );
 
-      return res.data;
+      promise.cancel = () => {
+        source.cancel(
+          `Query ${["pokemon", pokemon]} is cancelled by react-query.`
+        );
+        console.log(
+          `Query ${["pokemon", pokemon]} is cancelled by react-query.`
+        );
+      };
+
+      return promise;
     },
     {
-      cacheTime: Infinity,
       enabled: !!pokemon,
       retry: 1,
       retryDelay: 1000,

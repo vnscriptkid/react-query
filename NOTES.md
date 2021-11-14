@@ -21,3 +21,6 @@
 - retries:
   - default: exponential backoff, retry 3 times, before mark it as error
   - configurable
+- cancel outdated queries (autocomplete for exp):
+  - normal: `debounce`
+  - react-query way: expose `axios` req to `react-query`
