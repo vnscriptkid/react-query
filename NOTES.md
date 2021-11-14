@@ -14,3 +14,4 @@
   - can abtract query into custom hook, to reuse between components
   - queries run parallel
   - can cache search result
+  - can set condition when to start a query by `enabled`

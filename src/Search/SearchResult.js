@@ -15,6 +15,7 @@ const useSearch = (pokemon) =>
     },
     {
       cacheTime: Infinity,
+      enabled: !!pokemon,
     }
   );
 
