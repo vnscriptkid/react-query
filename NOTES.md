@@ -43,4 +43,10 @@
 - 3 side-effects: `onSuccess`, `onError`, `onSettled`
 
 ## invalidation
-- invalide a queryKey => refetch that queryKey
+- invalide a queryKey (work in `prefix` fashion) => refetch that queryKey
+- use subKey to spawn diff instances of queries
+```js
+invalidateQueries(['post'])
+invalidateQueries(['post', 'A'])
+invalidateQueries(['post', 'B'])
+```
