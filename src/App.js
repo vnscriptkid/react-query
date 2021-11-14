@@ -32,6 +32,13 @@ const useBerries = () =>
     },
     {
       cacheTime: Infinity,
+      initialData: [
+        {
+          name: "cheri",
+          url: "https://pokeapi.co/api/v2/berry/1/",
+        },
+      ],
+      initialStale: true,
     }
   );
 
