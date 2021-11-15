@@ -75,4 +75,7 @@ invalidateQueries(['post', 'B'])
   - populate data to client before getting updated data
   - handle error
 
+![image](https://user-images.githubusercontent.com/28957748/141711450-ed5b92d7-a638-4a69-83c1-9d23c02096a4.png)
+
+
 ## Redux vs react-query
