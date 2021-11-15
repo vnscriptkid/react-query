@@ -80,4 +80,6 @@ invalidateQueries(['post', 'B'])
 ## pagination
 - use `usePaginatedQuery`
 
+![image](https://user-images.githubusercontent.com/28957748/141713306-6c2754db-adaa-48f5-9644-59be654c7817.png)
+
 ## Redux vs react-query
