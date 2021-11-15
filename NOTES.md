@@ -72,4 +72,7 @@ invalidateQueries(['post', 'B'])
 
 - optimistic update: save todo -> getting updated data -> set data to query
 
+![image](https://user-images.githubusercontent.com/28957748/141711071-010c8d7e-9f21-48c5-8041-fdee93ee020c.png)
+
+
 ## Redux vs react-query
