@@ -70,6 +70,9 @@ invalidateQueries(['post', 'B'])
 
 ![image](https://user-images.githubusercontent.com/28957748/141689962-227e9957-165b-4c31-89c9-061fcebbc6d0.png)
 
-- optimistic update: save todo -> getting updated data -> set data to query
+- optimistic reload: save todo -> getting updated data -> set data to query (without calling get api)
+- optimistic update:
+  - populate data to client before getting updated data
+  - handle error
 
 ## Redux vs react-query
